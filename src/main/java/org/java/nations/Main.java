@@ -31,6 +31,12 @@ public class Main {
 						 + "	ON r.continent_id = c2.continent_id "
 						 + " WHERE c.name LIKE ? ";
 		
+		System.out.printf("\n%-10s %-50s %-50s %-50s\n",  "ID",
+				"COUNTRY",
+				"REGION",
+				"CONTINENT");	
+		
+		
 		try (Connection conn = DriverManager.getConnection(url, user, password)) {
 			
 			// preparo la query e aggiungo la stringa che abbiamo fatto inserire all'utente
@@ -46,10 +52,10 @@ public class Main {
 				String continent_name =rs.getString("continent_name");
 				
 				
-				System.out.println("\nid: " + id
-								+ "\ncountry_name:" + country_name
-								+ "\nregion_name:" + region_name
-								+ "\ncontinent_name:" + continent_name);	
+				System.out.printf("\n%-10s %-50s %-50s %-50s\n",  id,
+								country_name,
+								region_name
+								,continent_name);	
 			}
 			
 		} catch (Exception e) {
