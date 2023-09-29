@@ -37,8 +37,6 @@ public class Main {
 		// query da passare al PreparedStatement che prende le statistiche del paese selezionato in base all'id 
 		final String sqlDetails = "	SELECT  c.name, cs.`year` as year, cs.population as population, cs.gdp as PIL	"
 								+ "	FROM countries c "
-								+ "	JOIN country_languages cl "
-								+ "	ON c.country_id = cl.country_id "
 								+ "	JOIN country_stats cs "
 								+ "	ON c.country_id = cs.country_id "
 								+ "	WHERE c.country_id = ? "
