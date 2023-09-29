@@ -31,7 +31,8 @@ public class Main {
 						 + "	ON c.region_id = r.region_id "
 						 + " JOIN continents c2 "
 						 + "	ON r.continent_id = c2.continent_id "
-						 + " WHERE c.name LIKE ? ";
+						 + " WHERE c.name LIKE ? "
+						 + " ORDER BY country_name ";
 		
 		// query da passare al PreparedStatement che prende le statistiche del paese selezionato in base all'id 
 		final String sqlDetails = "	SELECT  c.name, cs.`year` as year, cs.population as population, cs.gdp as PIL	"
